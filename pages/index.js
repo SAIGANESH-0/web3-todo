@@ -71,7 +71,7 @@ export default function Home() {
     setLoading(true);
     try {
       await contract.methods
-        .toggleTaskCompleted(taskId)
+        .toggleTaskCompleted(taskId + 12)
         .send({ from: selectedAddress });
 
       let tasksU = await contract.methods.getTasks().call();
@@ -91,9 +91,9 @@ export default function Home() {
         <h1 className="text-white text-3xl font-bold text-center">
           WEB3 TO DO APP
         </h1>
-    <h2 className="text-white text-3xl font-bold text-center">
-    Please switch to Sepolia Testnet Network to use
-    </h2>
+        <h2 className="text-white text-2xl mt-2 font-bold text-center">
+          Please use Sepolia Testnet
+        </h2>
       </header>
       {selectedAddress ? (
         <p className="text-xl text-white font-semibold mt-8 mb-8">
@@ -113,7 +113,7 @@ export default function Home() {
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row  mb-8">
         <input
           type="text"
-          placeholder="Enter task description"
+          placeholder="Enter task description ...."
           value={taskDescription}
           onChange={(event) => setTaskDescription(event.target.value)}
           className="border border-gray-300 rounded-l-lg px-4 py-2  sm:w-3/4 mb-2 sm:mb-0"
