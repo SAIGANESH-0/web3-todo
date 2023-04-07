@@ -91,6 +91,9 @@ export default function Home() {
         <h1 className="text-white text-3xl font-bold text-center">
           WEB3 TO DO APP
         </h1>
+    <h2 className="text-white text-3xl font-bold text-center">
+    Please switch to Sepolia Testnet Network to use
+    </h2>
       </header>
       {selectedAddress ? (
         <p className="text-xl text-white font-semibold mt-8 mb-8">
